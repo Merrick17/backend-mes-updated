@@ -5,9 +5,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 mongoose
-  .connect(
-    "mongodb://AdminSammy:01161590@13.87.70.68:27017/?authSource=admin&readPreference=primary&directConnection=true&ssl=false"
-  )
+  .connect(process.env.MONGO_URL)
   .then(() => {
     console.log("connected...");
   })
@@ -26,7 +24,7 @@ app.use("/department", departmentRouter);
 app.use("/service", serviceRouter);
 app.use("/ilot", ilotRouter);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3500;
 app.listen(port, () => {
   console.log("app is running..");
 });

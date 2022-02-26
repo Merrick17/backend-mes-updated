@@ -8,7 +8,7 @@ RUN npm ci
 
 COPY . . 
 
-EXPOSE 3000
+EXPOSE 3500
 
 CMD [ "node","index.js" ]
 
