@@ -31,13 +31,13 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: stop running container
-        run: docker container stop $(docker ps -aq) ||
+        run: docker container stop mes-backend || true
 
       - name: remove containers
-        run: docker rm $(docker ps -aq)
+        run: docker rm mes-backend || true
 
       - name: build new image
         run: docker build . -t vgwdev/mes-backend:latest
 
       - name: run new image
-        run: docker run -d -p 3000 vgwdev/mes-backend:latest
+        run: docker run -d -p 3000 --name mes-backend vgwdev/mes-backend:latest
