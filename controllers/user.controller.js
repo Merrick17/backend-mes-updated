@@ -37,7 +37,8 @@ const addNewUser = async (req, res) => {
       });
     }
   } catch (error) {
-    res.status(500).json({
+    console.log("Error",error) ; 
+    res.json({
       succes: false,
       message: error.message
     });
@@ -75,6 +76,7 @@ const loginUser = async (req, res) => {
       }
     }
   } catch (error) {
+    console.log("Error",error) ; 
     res.status(500).json({
       succes: false,
       message: error.message
@@ -89,6 +91,7 @@ const getAllUsers = async (req, res) => {
       result: result
     });
   } catch (error) {
+    console.log("Error",error) ; 
     res.status(500).json({
       succes: false,
       message: error.message
@@ -108,6 +111,7 @@ const updateUser = async (req, res) => {
       message: "User Updated "
     });
   } catch (error) {
+    console.log("Error",error) ; 
     res.status(500).json({
       succes: false,
       message: error.message
@@ -123,6 +127,7 @@ const deleteUser = async (req, res) => {
       message: "User Deleted."
     });
   } catch (error) {
+    console.log("Error",error) ; 
     res.status(500).json({
       succes: false,
       message: error.message
