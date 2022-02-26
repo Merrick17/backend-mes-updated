@@ -40,4 +40,4 @@ jobs:
         run: docker build . -t vgwdev/mes-backend:latest
 
       - name: run new image
-        run: docker run -d -p 3000 --name mes-backend vgwdev/mes-backend:latest
+        run: docker run -d -p 3000:3000 --name mes-backend vgwdev/mes-backend:latest
